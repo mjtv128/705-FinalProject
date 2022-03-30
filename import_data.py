@@ -109,6 +109,10 @@ def reduce_data(df):
 
 if __name__ == "__main__":
     # Example of how to get a dataframe for January 2019
-    df2019jan = paging_data(where2019jan, get_count(where2019jan))
-    df2019jan_reduced = reduce_data(df2019jan)
-    df2019jan_reduced.to_csv("path")
+    # df2019jan = paging_data(where2019jan, get_count(where2019jan))
+    df2019jul = paging_data(where2019jul, get_count(where2019jul))
+
+    # df2019jan_reduced = reduce_data(df2019jan)
+    df2019jul_reduced = reduce_data(df2019jul)
+
+    df2019jul_reduced.to_csv("path")
