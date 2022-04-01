@@ -85,9 +85,9 @@ def split_export(df: pd.DataFrame) -> None:
             int(0.8 * len(df)),
         ],
     )
-    train.to_csv("data/train_data.csv")
-    validate.to_csv("data/val_data.csv")
-    test.to_csv("data/test_data.csv")
+    train.to_csv("data/train_data.csv", index=False)
+    validate.to_csv("data/val_data.csv", index=False)
+    test.to_csv("data/test_data.csv", index=False)
     pass
 
 
