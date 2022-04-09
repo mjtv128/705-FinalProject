@@ -16,8 +16,6 @@ def clean_data(path: str) -> pd.DataFrame:
     df = df.drop(
         [
             "Unnamed: 0",
-            "Unnamed: 0.1",
-            "Unnamed: 0.1.1",
             "pickup_centroid_location",
             "dropoff_centroid_location",
         ],
@@ -85,14 +83,15 @@ def split_export(df: pd.DataFrame) -> None:
             int(0.8 * len(df)),
         ],
     )
-    train.to_csv("data/train_data.csv", index=False)
-    validate.to_csv("data/val_data.csv", index=False)
-    test.to_csv("data/test_data.csv", index=False)
+    train.to_csv("../15_modified_data/train_data.csv", index=False)
+    validate.to_csv("../15_modified_data/val_data.csv", index=False)
+    test.to_csv("../15_modified_data/test_data.csv", index=False)
     pass
 
 
 if __name__ == "__main__":
-    df = clean_data("data/final_data.csv")
-    df = community_names(df, "data/community_areas.geojson")
+    df = clean_data("../15_modified_data/final_data.csv")
+    print(df.columns)
+    df = community_names(df, "../10_original_data/community_areas.geojson")
     df = new_variables(df)
     split_export(df)
