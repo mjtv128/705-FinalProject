@@ -33,8 +33,9 @@ new = new.drop(
         "Unnamed: 0_y",
         "merge",
         "date_y",
-    ], axis = 1
+    ],
+    axis=1,
 )
-new = new.rename(columns = {"date_x":"date"})
+new = new.rename(columns={"date_x": "date"})
 
-new.to_csv("15_modified_data/final_data.csv")
+new.to_csv("../15_modified_data/final_data.csv")
