@@ -66,7 +66,7 @@ def get_segment(value, begin, end):
 
 
 if __name__ == "__main__":
-    chicago = get_segment(station_id, 2018, 2021)
+    chicago = get_segment(station_id, 2021, 2022)
     # Concatenate dataframes
     chicago = pd.concat(chicago).reset_index(drop=True)
     # Keep only statistics of interest
@@ -76,8 +76,8 @@ if __name__ == "__main__":
                 "PRCP",
                 "TMAX",
                 "TMIN",
-                "SNOW",
-                "SNWD",
+                # "SNOW",
+                # "SNWD",
                 "WSF2",
             ]
         )
@@ -92,8 +92,8 @@ if __name__ == "__main__":
     ).reset_index()
     # Convert to imperial measurements
     temp["precip"] = temp["PRCP"] / (25.4)
-    temp["snow"] = temp["SNOW"] / (25.4)
-    temp["snow_depth"] = temp["SNWD"] / (25.4)
+    # temp["snow"] = temp["SNOW"] / (25.4)
+    # temp["snow_depth"] = temp["SNWD"] / (25.4)
     temp["max_temp"] = ((temp["TMAX"] / 10) * 9 / 5) + 32
     temp["min_temp"] = ((temp["TMAX"] / 10) * 9 / 5) + 32
     temp["wind_speed"] = temp["WSF2"] * 2.23694
@@ -104,9 +104,11 @@ if __name__ == "__main__":
             "max_temp",
             "min_temp",
             "precip",
-            "snow",
-            "snow_depth",
+            # "snow",
+            # "snow_depth",
             "wind_speed",
         ]
     ]
-    temp.to_csv("../10_original_data/weather.csv")
+    temp.to_csv(
+        "/Users/yangshining/Desktop/DUKE/2022spring/ids705/final_project/data_extraction/weather20212022.csv"
+    )

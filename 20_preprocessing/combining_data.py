@@ -6,11 +6,8 @@ df = pd.concat(
     map(
         pd.read_csv,
         [
-            "../10_original_data/rideshare2018_reduced.csv",
-            "../10_original_data/rideshare_JanFebMar_reduced.csv",
-            "../10_original_data/rideshare_AprMayJun.csv",
-            "../10_original_data/jul_to_aug.csv",
-            "../10_original_data/2019oct_to_2020jan.csv",
+            "../10_original_data/2020apr_july.csv",
+            "../10_original_data/2021may_aug.csv",
         ],
     ),
     ignore_index=True,
