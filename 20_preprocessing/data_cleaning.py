@@ -90,7 +90,7 @@ def split_export(df: pd.DataFrame) -> None:
 
 
 if __name__ == "__main__":
-    df = clean_data("../15_modified_data/final_data.csv")
+    df = clean_data("../15_modified_data/post_covid_final.csv")
     print(df.columns)
     df = community_names(df, "../10_original_data/community_areas.geojson")
     df = new_variables(df)
