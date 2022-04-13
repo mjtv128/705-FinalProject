@@ -28,9 +28,11 @@ def graph(df: pd.DataFrame, model_name: str) -> None:
     cx.add_basemap(ax, crs="EPSG:4326", source=cx.providers.CartoDB.Voyager)
     ax.set_axis_off()
     plt.savefig(
-        f"26_images/graph_performance_{model}.png", bbox_inches="tight", dpi=400
+        f"26_images/graph_performance_{model_name}.png", bbox_inches="tight", dpi=400
     )
 
 
 if __name__ == "__main__":
+    df = pd.read_csv("log_communities.csv")
+    graph(df, "fancy_log")
     pass
