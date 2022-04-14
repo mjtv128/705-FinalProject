@@ -31,7 +31,7 @@ Due to the large size of the dataset, we used the Socrata Open Data API to retri
 We trained our data on a simple Logistic Regression model with variables that the drivers have autonomy over, a Logistic Regression model with all variables, a Random Forest Classifier and a XGBoost Classifier. All four models were evaluated on held-out test set from the period on which they were trained. The ROC curves and Precision/Recall (PR) curves are shown in Figure 1 below. As is visible from the AUC and average precision, XGBoost model performed the best, but all models did not achieve high performance. 
 
 <p align="center">
-  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/roc_auc.png" width="45%">
+  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/roc_auc_pre_covid.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/pr_title.png" width="45%">
 </p>
@@ -41,7 +41,7 @@ Figure 1. ROC Curves for Four Final Models on Pre-covid Data
 
 We also evaluated generalization performance in a new time period. Specifically, we utilized data from April through July 2020. Theoretically, this new data was a strong test of generalization, because research suggested that tipping behavior did change during the pandemic \cite{CONLISK2021}. The ROC and PR curves are included here for this data in Figure 2 below. Surprisingly, the models performed similarly on data from this time period. In fact, the simple logistic regression performed noticeably better on this data than on the original test data. This indicated that despite relatively poor performance, our models were quite robust.
 <p align="center">
-  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/roc_auc_cov.png" width="45%">
+  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/roc_auc_post_covid.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/pr_cov_title.png" width="45%">
 </p>
