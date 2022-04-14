@@ -39,7 +39,7 @@ We trained our data on a simple Logistic Regression model with variables that th
 Figure 1. ROC Curves for Four Final Models on Pre-covid Data 
 </p>
 
-We also evaluated generalization performance in a new time period. Specifically, we utilized data from April through July 2020. Theoretically, this new data was a strong test of generalization, because research suggested that tipping behavior did change during the pandemic \cite{CONLISK2021}. The ROC and PR curves are included here for this data in Figure 2 below. Surprisingly, the models performed similarly on data from this time period. In fact, the simple logistic regression performed noticeably better on this data than on the original test data. This indicated that despite relatively poor performance, our models were quite robust.
+We also evaluated generalization performance in a new time period. Specifically, we utilized data from April through July 2020. Theoretically, this new data was a strong test of generalization, because research suggested that tipping behavior did change during the pandemic. The ROC and PR curves are included here for this data in Figure 2 below. Surprisingly, the models performed similarly on data from this time period. In fact, the simple logistic regression performed noticeably better on this data than on the original test data. This indicated that despite relatively poor performance, our models were quite robust.
 <p align="center">
   <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/30_images/roc_auc_post_covid.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
