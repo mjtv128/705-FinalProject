@@ -76,8 +76,8 @@ if __name__ == "__main__":
                 "PRCP",
                 "TMAX",
                 "TMIN",
-                # "SNOW",
-                # "SNWD",
+                "SNOW",
+                "SNWD",
                 "WSF2",
             ]
         )
@@ -92,8 +92,8 @@ if __name__ == "__main__":
     ).reset_index()
     # Convert to imperial measurements
     temp["precip"] = temp["PRCP"] / (25.4)
-    # temp["snow"] = temp["SNOW"] / (25.4)
-    # temp["snow_depth"] = temp["SNWD"] / (25.4)
+    temp["snow"] = temp["SNOW"] / (25.4)
+    temp["snow_depth"] = temp["SNWD"] / (25.4)
     temp["max_temp"] = ((temp["TMAX"] / 10) * 9 / 5) + 32
     temp["min_temp"] = ((temp["TMAX"] / 10) * 9 / 5) + 32
     temp["wind_speed"] = temp["WSF2"] * 2.23694
@@ -104,8 +104,8 @@ if __name__ == "__main__":
             "max_temp",
             "min_temp",
             "precip",
-            # "snow",
-            # "snow_depth",
+            "snow",
+            "snow_depth",
             "wind_speed",
         ]
     ]
