@@ -68,12 +68,13 @@ pip install -r requirements.txt
 ```
 
 **Step 4: Download data**
-This requires a Socrata Application Token, which can be obtained here: https://evergreen.data.socrata.com/. After receiving the token, enter it into the token field in `00_original_data/import_data.py`
-```
-python 00_original_data/import_data.py
-```
+This requires a Socrata Application Token, which can be obtained here: https://evergreen.data.socrata.com/. After receiving the token, enter it into the token field in `00_original_data/import_data.py` to retrieve rideshare data. For weather data, run `00_original_data/getting_weather.py` to retrieve weather data from NOAA. For community area data, it is stored as `00_original_data/community_areas.geojson`.
 
+**Step 5: Create preprocessed train, test and validation datasets**
+First, run `20_preprocessing/combining_data.py` to combine the raw datasets together. Then, run `20_preprocessing/data_cleaning_splitting.py` to proprocess data and create train, test and validation sets. Also the splitted datasets are stored in `10_modified_data` folder.
 
+**Step 6: Run models**
+Our four model experiment (baseline logistic regression, logistic regression, Random Forest, and XGBoost) notebooks are stored in `40_models` folder. The results could be accessed in `50_predict_proba_results` folder.
 
 
 
