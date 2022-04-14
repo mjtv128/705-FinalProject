@@ -33,6 +33,16 @@ Due to the large size of the dataset, we used the Socrata Open Data API to retri
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr.png" width="45%">
 </p>
+<p align = "center">
+Figure 1. ROC Curves for Four Final Models on Pre-covid Data 
+</p>
+
+<p align="center">
+  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/roc_auc.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr.png" width="45%">
+</p>
+
 
 
 
