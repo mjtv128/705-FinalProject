@@ -1,14 +1,13 @@
 """Load data from Socrata API."""
 
 # Import packages
-from site import check_enableusersite
 from sodapy import Socrata
 import pandas as pd
 import numpy as np
 from datetime import datetime
 
 # Set up API
-token = "dL93bWcHXE99lzC2Tyj7mJ4qR"
+token = None  # Replace None with token here
 client = Socrata("data.cityofchicago.org", token, timeout=1000000)
 
 # Where filter conditions for each month
