@@ -28,20 +28,54 @@ Due to the large size of the dataset, we used the Socrata Open Data API to retri
 </p>
 
 ## Results
+We trained our data on a simple Logistic Regression model with variables that the drivers have autonomy over, a Logistic Regression model with all variables, a Random Forest Classifier and a XGBoost Classifier. All four models were evaluated on held-out test set from the period on which they were trained. The ROC curves and Precision/Recall (PR) curves are shown in Figure 1 below. As is visible from the AUC and average precision, XGBoost model performed the best, but all models did not achieve high performance. 
+
 <p align="center">
   <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/roc_auc.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr.png" width="45%">
+  <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr_title.png" width="45%">
 </p>
 <p align = "center">
 Figure 1. ROC Curves for Four Final Models on Pre-covid Data 
 </p>
 
+We also evaluated generalization performance in a new time period. Specifically, we utilized data from April through July 2020. Theoretically, this new data was a strong test of generalization, because research suggested that tipping behavior did change during the pandemic \cite{CONLISK2021}. The ROC and PR curves are included here for this data in Figure 2 below. Surprisingly, the models performed similarly on data from this time period. In fact, the simple logistic regression performed noticeably better on this data than on the original test data. This indicated that despite relatively poor performance, our models were quite robust.
 <p align="center">
-  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/roc_auc.png" width="45%">
+  <img alt="Light" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/roc_auc_cov.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr.png" width="45%">
+  <img alt="Dark" src="https://github.com/mjtv128/705-FinalProject/blob/main/26_images/pr_cov_title.png" width="45%">
 </p>
+<p align = "center">
+Figure 2. ROC Curves for Four Final Models on Post-covid Data 
+</p>
+
+## Conclusion
+Overall, the baseline logistic regression model appears to be the ideal model in this space. Machine learning methods with a more flexible form only marginally increased performance, while dramatically decreasing explainability and interpretation. The findings are consistent with previous research that suggests tipping behavior is difficult to predict, while extending the analysis to a new functional form (ride-share). Also, despite the pandemic, the models predicative ability remained steady during this new time frame.
+
+However, there are some key limitations to this study. By nature, the analysis is only relevant for rides within Chicago, and even then only rides that begin and end within city boundaries. While only using 0.1\% of the total available data made analysis feasible, it also may have limited the insights available. Future work in this space could include a cloud-computing based approach to attempt a larger data sample. Continually, combination of rideshare data with survey data about passenger and driver characteristics could provide better insights.
+
+## User Instructions
+**Step 1: Clone the GitHub repository**
+```
+git clone https://github.com/mjtv128/705-FinalProject.git
+```
+
+**Step 2: Create a virtual environment for the project (pip or conda)**
+
+**Step 3: Install required packages**
+```
+pip install -r requirements.txt
+```
+
+**Step 4: Download data**
+This requires a Socrata Application Token, which can be obtained here: https://evergreen.data.socrata.com/. After receiving the token, enter it into the token field in `10_original_data/import_data.py`
+```
+python 10_original_data/import_data.py
+```
+
+
+
+
 
 
 
